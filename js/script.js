@@ -33,8 +33,9 @@ function renderCalender(){
     }
     for(let i = 1;i <= endDate;i++){
         let className = (
-            i === date.getDate() && month == date.getMonth() && year === date.getFullYear()
-        ) ? `class = "today"` : ``;
+            i === date.getDate() && month === date.getMonth() && year === date.getFullYear()
+        ) ? `class = "today"` : `No`;
+        console.log(className);
         datesHTML += `<li ${className}>${i}</li>`;
     }
     for(let i = end;i < 6;i++){
@@ -57,9 +58,6 @@ navs.forEach((nav)=>{
         }else{
             month = (btnId === 'next') ? month + 1 : month - 1;
         }
-        date = new Date(year,month,new Date().getDate());
-        month = date.getMonth();
-        year = date.getFullYear();
         renderCalender();
     });
 });
