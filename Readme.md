@@ -1,0 +1,1 @@
+* Date(year,month,1).getDay() -> 0 means Sunday

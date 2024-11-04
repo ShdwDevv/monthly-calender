@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(to bottom,#ff5e88,#ff9966);
+    font-family: "Poppins",sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+    color:#fff;
+    margin-bottom: 2rem;
+}
+.calender{
+    /* margin: auto; */
+    width: min(95%,380px);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.calender header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:5px 10px;
+}
+.calender ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calender ul li{
+    width:calc(100%/7);
+    margin-top: 25px;
+    position: relative;
+    z-index: 2;
+}
+#prev , #next{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+#prev::before , #next::before{
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    border-color: #ccc;
+}
+#prev::before{
+    transform: translate(-50%,-50%) rotate(-135deg);
+}
+#next::before{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+#prev:hover::before , #next:hover::before{
+    border-color: #000;
+}
+.days{
+    font-weight: 600;
+    
+}
+.dates li.today{
+    color:#fff;
+}
+.dates li.today::before{
+    content : "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+}
+.dates li.inactive{
+    color:#ccc;
+}
+@media only screen and (max-width: 400px) {
+  .days{
+    font-size: 12px;
+  }
+}
